@@ -1,0 +1,19 @@
+from collections import OrderedDict
+
+def solve():
+    n = int(input())
+    words = OrderedDict()
+
+    for _ in range(n):
+        word = input().strip()
+        if word in words:
+            words[word] += 1
+        else:
+            words[word] = 1
+
+    print(len(words))
+    
+    print(*(words.values()))
+
+if __name__ == "__main__":
+    solve()
