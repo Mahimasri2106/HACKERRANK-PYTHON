@@ -1,0 +1,10 @@
+def merge_the_tools(string, k):
+   n = len(string)
+   for i in range(0, n, k):
+        substring = string[i : i + k]
+      
+        unique_substring = "".join(dict.fromkeys(substring))
+        
+        print(unique_substring)
+
+
