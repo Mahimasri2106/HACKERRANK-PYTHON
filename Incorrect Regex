@@ -1,0 +1,12 @@
+import re
+try:
+    t=int(raw_input())
+except EOFError:
+    t=0
+for _ in range(t):
+    try:
+        pattern=raw_input()
+        re.compile(pattern)
+        print True
+    except(re.error,EOFError):
+        print False
