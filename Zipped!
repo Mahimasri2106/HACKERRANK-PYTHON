@@ -1,0 +1,14 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read N (students) and X (subjects)
+n, x = map(int, input().split())
+
+# Read X lines, each containing N student marks
+subjects = []
+for _ in range(x):
+    subjects.append(map(float, input().split()))
+
+# zip(*subjects) transposes the matrix:
+# Rows (subjects) -> Columns (students)
+for student_scores in zip(*subjects):
+    # Calculate average for each student
+    print(sum(student_scores) / x)
