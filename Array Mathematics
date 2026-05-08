@@ -1,0 +1,20 @@
+import numpy
+
+# Read N and M
+n_m_input = input().split()
+n = int(n_m_input[0])
+m = int(n_m_input[1])
+
+# Read array A
+a = numpy.array([input().split() for _ in range(n)], int)
+
+# Read array B
+b = numpy.array([input().split() for _ in range(n)], int)
+
+# Perform the operations and print the results
+print(numpy.add(a, b))
+print(numpy.subtract(a, b))
+print(numpy.multiply(a, b))
+print(numpy.floor_divide(a, b)) # Use floor_divide for integer division
+print(numpy.mod(a, b))
+print(numpy.power(a, b))
