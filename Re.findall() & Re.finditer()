@@ -1,0 +1,18 @@
+import re
+vowels = "aeiou"
+consonants = "qwrtypsdfghjklzxcvbnm"
+pattern = r'(?<=[%s])([%s]{2,})(?=[%s])' % (consonants, vowels, consonants)
+
+def find_vowel_substrings():
+    s = input().strip()
+    
+    matches = re.findall(pattern, s, re.IGNORECASE)
+    
+    if matches:
+        for match in matches:
+            print(match)
+    else:
+        print("-1")
+
+if __name__ == "__main__":
+    find_vowel_substrings()
