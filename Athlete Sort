@@ -1,0 +1,27 @@
+import math
+import os
+import random
+import re
+import sys
+
+if __name__ == '__main__':
+    # Read N and M (rows and columns)
+    nm = input().split()
+    n = int(nm[0])
+    m = int(nm[1])
+
+    # Store all rows
+    arr = []
+    for _ in range(n):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    # Read the column index K to sort by
+    k = int(input())
+
+    # Sort the table based on the K-th attribute (stable sort)
+    # The key=lambda x: x[k] ensures we sort by the specific column
+    arr.sort(key=lambda x: x[k])
+
+    # Print the sorted table
+    for row in arr:
+        print(*(row))
