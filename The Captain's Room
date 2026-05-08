@@ -1,0 +1,11 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read input
+k = int(input())
+room_list = list(map(int, input().split()))
+
+# Calculate Captain's Room
+# set(room_list) gives unique rooms
+# sum(set(room_list)) * k calculates total if all were in groups
+# sum(room_list) is the actual total
+captain_room = (sum(set(room_list)) * k - sum(room_list)) // (k - 1)
+print(captain_room)
