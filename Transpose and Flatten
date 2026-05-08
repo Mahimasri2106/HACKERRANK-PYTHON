@@ -1,0 +1,26 @@
+import numpy
+
+# Read the dimensions from the first line of input
+dimensions = input().split()
+n_rows = int(dimensions[0])
+n_cols = int(dimensions[1])
+
+# Read the matrix elements from the subsequent lines and create a numpy array
+# The input can be on one line or spread across multiple lines, so we need to
+# collect all elements and then reshape the array.
+elements = []
+for _ in range(n_rows):
+    row_input = input().split()
+    elements.extend(row_input)
+
+# Convert elements to integers and create the numpy array with the correct shape
+my_array = numpy.array(elements, dtype=int).reshape(n_rows, n_cols)
+
+# Print the transpose of the array
+# The output format for the array should match the sample output format
+print(numpy.transpose(my_array))
+
+# Print the flatten of the array
+# The output format for the array should match the sample output format
+print(my_array.flatten())
+
