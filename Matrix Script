@@ -1,0 +1,19 @@
+import re
+
+# Read dimensions
+n, m = map(int, input().split())
+
+# Read the matrix
+matrix = [input() for _ in range(n)]
+
+# Transpose matrix to read columns
+decoded_string = ""
+for j in range(m):
+    for i in range(n):
+        decoded_string += matrix[i][j]
+
+# Use Regex to replace symbols/spaces between alphanumerics
+# Pattern matches non-alphanumeric surrounded by alphanumeric
+final_output = re.sub(r'(?<=[A-Za-z0-9])[^A-Za-z0-9]+(?=[A-Za-z0-9])', ' ', decoded_string)
+
+print(final_output)
