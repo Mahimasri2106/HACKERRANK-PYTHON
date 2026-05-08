@@ -1,0 +1,10 @@
+
+def get_attr_number(node):
+    # node.attrib returns a dictionary of attributes for the current tag
+    count = len(node.attrib)
+    
+    # Recursively sum the attributes of all child elements
+    for child in node:
+        count += get_attr_number(child)
+        
+    return count
