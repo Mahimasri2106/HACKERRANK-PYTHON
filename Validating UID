@@ -1,0 +1,25 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+
+def validate_uid(uid):
+    # Rule 1: Exactly 10 characters & Rule 3: Only alphanumeric
+    if len(uid) != 10 or not uid.isalnum():
+        return "Invalid"
+    
+    # Rule 4: No character should repeat
+    if len(set(uid)) != 10:
+        return "Invalid"
+    
+    # Rule 1 (sub-parts): At least 2 uppercase and 3 digits
+    upper_case = len(re.findall(r'[A-Z]', uid))
+    digits = len(re.findall(r'[0-9]', uid))
+    
+    if upper_case >= 2 and digits >= 3:
+        return "Valid"
+    else:
+        return "Invalid"
+
+# Example usage for test cases
+t = int(input())
+for _ in range(t):
+    print(validate_uid(input().strip()))
