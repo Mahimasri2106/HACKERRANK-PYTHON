@@ -1,0 +1,15 @@
+# Read the space-separated values of x and y from the first line of input
+x_str, y_str = input().split()
+x = int(x_str)
+y = int(y_str)
+
+# Read the polynomial string from the second line of input
+polynomial = input()
+
+# Evaluate the polynomial string with the given value of x
+# We create a dictionary to limit the scope of eval for safety in a general use case
+# The problem constraints specify integer coefficients and inputs, so a simple approach suffices.
+result = eval(polynomial, {"__builtins__": None}, {'x': x})
+
+# Verify if P(x) equals y and print the result as a boolean
+print(result == y)
