@@ -1,0 +1,14 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import groupby
+
+# Read the input string
+S = input().strip()
+
+# Use groupby to find consecutive characters
+# k is the character, g is the iterator of consecutive occurrences
+result = []
+for k, g in groupby(S):
+    result.append(f"({len(list(g))}, {k})")
+
+# Print the final formatted string
+print(" ".join(result))
