@@ -1,0 +1,18 @@
+
+def product(fracs):
+    """
+    Calculates the product of a list of rational numbers.
+
+    Args:
+        fracs: A list of Fraction objects.
+
+    Returns:
+        A tuple containing the numerator and denominator of the product
+        in its simplest form.
+    """
+    # Use reduce with a lambda function to cumulatively multiply the fractions
+    t = reduce(lambda x, y: x * y, fracs)
+    # The Fraction module automatically keeps the result in simplest form
+    return t.numerator, t.denominator
+
+
