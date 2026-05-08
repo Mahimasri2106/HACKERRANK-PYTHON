@@ -1,0 +1,22 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+
+def is_valid_float(s):
+    # Regex breakdown:
+    # ^[+-]?      : Starts with optional + or -
+    # \d*         : Zero or more digits
+    # \.          : Exactly one decimal point
+    # \d+         : At least one digit after the decimal
+    # $           : End of string
+    pattern = r'^[+-]?\d*\.\d+$'
+    
+    try:
+        # Check regex match and ensure it can be converted to float
+        return bool(re.match(pattern, s)) and float(s) is not None
+    except ValueError:
+        return False
+
+# Processing Input
+t = int(input())
+for _ in range(t):
+    print(is_valid_float(input()))
