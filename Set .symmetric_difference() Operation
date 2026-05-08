@@ -1,0 +1,12 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read input
+n_english = int(input())
+english_subs = set(map(int, input().split()))
+n_french = int(input())
+french_subs = set(map(int, input().split()))
+
+# Calculate symmetric difference
+result = english_subs.symmetric_difference(french_subs)
+
+# Output the result
+print(len(result))
