@@ -1,0 +1,14 @@
+s = input()
+
+def sorting_key(c):
+    if c.islower():
+        return (0, c)      # Lowercase letters first
+    elif c.isupper():
+        return (1, c)      # Uppercase letters second
+    elif c.isdigit():
+        if int(c) % 2 != 0:
+            return (2, c)  # Odd digits third
+        else:
+            return (3, c)  # Even digits last
+
+print("".join(sorted(s, key=sorting_key)))
