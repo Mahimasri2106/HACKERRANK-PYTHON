@@ -1,0 +1,15 @@
+import numpy
+
+# Read input as a string and split into a list of strings, then map to integers
+shape_dims = list(map(int, input().split()))
+
+# Convert the list of dimensions into a tuple for numpy
+array_shape = tuple(shape_dims)
+
+# Create and print the array of zeros with integer type
+# Use numpy documentation for the correct dtype attribute: numpy.int or int
+# The output format should match the sample output exactly, no extra print statements
+print(numpy.zeros(array_shape, dtype=int))
+
+# Create and print the array of ones with integer type
+print(numpy.ones(array_shape, dtype=int))
