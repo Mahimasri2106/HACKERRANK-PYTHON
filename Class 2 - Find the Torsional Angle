@@ -1,0 +1,30 @@
+
+class Points(object):
+    def __init__(self, x, y, z):
+        self.x = x
+        self.y = y
+        self.z = z
+
+    def __sub__(self, no):
+        i = self.x - no.x
+        j = self.y - no.y
+        k = self.z - no.z
+
+        return Points(i, j, k)
+
+    def dot(self, no):
+        i = self.x * no.x
+        j = self.y * no.y
+        k = self.z * no.z
+
+        return i + j + k
+
+    def cross(self, no):
+        i = (self.y * no.z) - (self.z * no.y)
+        j = (self.x * no.z) - (self.z * no.x)
+        k = (self.x * no.y) - (self.y * no.x)
+
+        return Points(i, -j, k)
+
+    def absolute(self):
+        return pow((self.x ** 2 + self.y ** 2 + self.z ** 2), 0.5)
