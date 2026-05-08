@@ -1,0 +1,14 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+
+# Read the number of inputs
+n = int(input())
+
+# Iterate through each input string
+for _ in range(n):
+    mobile_no = input().strip()
+    # Check if the input matches the 10-digit pattern starting with 7, 8, or 9
+    if re.match(r'^[789]\d{9}$', mobile_no):
+        print("YES")
+    else:
+        print("NO")
