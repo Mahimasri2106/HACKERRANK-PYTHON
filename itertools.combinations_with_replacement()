@@ -1,0 +1,11 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import combinations_with_replacement
+
+# Read input, e.g., "HACK 2"
+line = input().split()
+s = sorted(line[0])
+k = int(line[1])
+
+# Generate and print combinations
+for combo in combinations_with_replacement(s, k):
+    print(''.join(combo))
