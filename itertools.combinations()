@@ -1,0 +1,18 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import combinations
+
+# Read the input string and integer from a single line
+s, k = input().split()
+# Convert k to an integer
+k = int(k)
+
+# Sort the string to ensure lexicographical order
+sorted_s = sorted(s)
+
+# Generate and print combinations for all sizes from 1 to k
+for length in range(1, k + 1):
+    # Get combinations for the current length
+    combs = combinations(sorted_s, length)
+    # Iterate through each combination and print it as a joined string
+    for comb in combs:
+        print("".join(comb))
