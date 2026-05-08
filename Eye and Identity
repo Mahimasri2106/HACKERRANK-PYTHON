@@ -1,0 +1,10 @@
+import numpy
+
+# This line ensures the output matches the alignment expected in the challenge
+numpy.set_printoptions(legacy='1.13')
+
+# Read N and M from input
+n, m = map(int, input().split())
+
+# Generate and print the N x M array with 1s on the main diagonal
+print(numpy.eye(n, m))
