@@ -1,0 +1,19 @@
+import re
+
+for _ in range(int(input())):
+    s = input()
+    
+    # 1. Check structure: Starts with 4,5,6 & has 16 digits (optionally grouped by -)
+    # 2. Check for disallowed characters
+    structure_match = re.match(r"^[456](?:\d{15}|\d{3}(?:-\d{4}){3})$", s)
+    
+    if structure_match:
+        # Remove hyphens to check for consecutive repeats
+        clean_s = s.replace("-", "")
+        # Check for 4 or more consecutive repeated digits
+        if re.search(r"(\d)\1{3,}", clean_s):
+            print("Invalid")
+        else:
+            print("Valid")
+    else:
+        print("Invalid")
