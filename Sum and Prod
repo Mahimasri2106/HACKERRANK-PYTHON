@@ -1,0 +1,38 @@
+import numpy as np
+
+try:
+    # Read N and M (dimensions) from the first line of input
+    n_m = list(map(int, input().split()))
+    if len(n_m) < 2:
+        # Handle cases where N and M might be on different lines if input is tricky
+        remaining = list(map(int, input().split()))
+        n_m.extend(remaining)
+    
+    n, m = n_m[0], n_m[1]
+    
+    # Read the N lines of M space-separated integers to create a 2D array
+    arr = []
+    for _ in range(n):
+        row = list(map(int, input().split()))
+        arr.append(row)
+
+    # Convert the list of lists to a NumPy array with integer type
+    # The data type needs to be specified to avoid potential issues with default string reading
+    numpy_array = np.array(arr, dtype=int)
+
+    # Compute the sum along axis 0 (columns)
+    sum_along_axis_0 = np.sum(numpy_array, axis=0)
+
+    # Compute the product of the resulting 1D array
+    # By default, np.prod() on a 1D array calculates the product of all elements
+    result_product = np.prod(sum_along_axis_0)
+
+    # Print the final result
+    print(result_product)
+
+except EOFError:
+    # Handle the end of input if running in an environment where input stops after sample data
+    pass
+except ValueError:
+    # Handle cases where input might not be in the expected format
+    pass
