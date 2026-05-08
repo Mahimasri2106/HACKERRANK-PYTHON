@@ -1,0 +1,12 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read input
+n_english = int(input())
+english_subs = set(map(int, input().split()))
+n_french = int(input())
+french_subs = set(map(int, input().split()))
+
+# Calculate union of both sets
+all_students = english_subs.union(french_subs)
+
+# Output the total count
+print(len(all_students))
