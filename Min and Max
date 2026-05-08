@@ -1,0 +1,18 @@
+import numpy as np
+
+# Read N and M from the first line of input
+N, M = map(int, input().split())
+
+# Read the matrix data and create a NumPy array
+# Use a list comprehension to read rows and map elements to integers
+my_array = np.array([list(map(int, input().split())) for _ in range(N)])
+
+# Compute the minimum along axis 1 (row-wise minimum)
+min_along_axis_1 = np.min(my_array, axis=1)
+
+# Compute the maximum of the resulting 1-D array
+max_of_result = np.max(min_along_axis_1)
+
+# Print the final result
+print(max_of_result)
+
