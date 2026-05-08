@@ -1,0 +1,12 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read input
+n_eng = int(input())
+english_subs = set(map(int, input().split()))
+n_fre = int(input())
+french_subs = set(map(int, input().split()))
+
+# Find students only in English (English - French)
+only_english = english_subs.difference(french_subs)
+
+# Output the count
+print(len(only_english))
