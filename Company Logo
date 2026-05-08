@@ -1,0 +1,7 @@
+from collections import Counter
+
+s = sorted(input()) # Sort alphabetically initially for tie-breaking
+counts = Counter(s)
+# Sort by frequency descending, then alphabetically
+for char, count in counts.most_common(3):
+    print(f"{char} {count}")
