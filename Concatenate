@@ -1,0 +1,17 @@
+import numpy
+
+# Read the first line for dimensions N, M, P
+dimensions = list(map(int, input().split()))
+N = dimensions[0]
+M = dimensions[1]
+P = dimensions[2]
+
+# Read next N lines for the first array
+arr1 = numpy.array([input().split() for _ in range(N)], int)
+
+# Read next M lines for the second array
+arr2 = numpy.array([input().split() for _ in range(M)], int)
+
+# Concatenate along axis 0 (vertical)
+print(numpy.concatenate((arr1, arr2), axis=0))
+
